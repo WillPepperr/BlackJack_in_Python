@@ -314,4 +314,4 @@ class BlackjackGame:
 
 
 if __name__ == "__main__":
-    game = BlackjackGame(num_decks=100, game_burn_percentage=.80)
+    game = BlackjackGame(num_decks=8, game_burn_percentage=.80)
