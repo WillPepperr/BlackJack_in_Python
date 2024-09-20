@@ -1,9 +1,9 @@
 # BlackJack_in_Python
 
-A simulated Blackjack experience via the Python console. I created this because I had not seen any examples online of a program that accurately simulates blackjack as it is played in a real casino. 
-<br><br/>
+A simulated Blackjack experience via the Python console. I created this because I had not seen any examples online of a program that accurately simulates blackjack as it is played in a real casino. Most games I found did not include the ruleset I wanted and did not simulate a "Shoe" that contains all decks of cards played until the dealer decides to shuffle.
+
 ![image](https://github.com/user-attachments/assets/727aee4c-7712-4ef5-92b3-a5e38aa2ba83)
-<br><br/>
+
 
 This means generating a randomly shuffled shoe and progressing through it until a limit is reached for the shoe to be shuffled. This allows for what is referred to as "Card Counting" or "Advantage Play". Included in the program is the card counting calculation (Both the "Running" and "True" counts). 
 <br><br/>
@@ -15,4 +15,5 @@ Not included in this program are insurance bets and late surrendering. Insurance
 <br><br/>
 
 Here is a quick visual of the ruleset of the blackjack game created:
+
 ![image](https://github.com/user-attachments/assets/fbaad232-73f1-4955-908c-f456d3985693)
