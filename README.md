@@ -2,6 +2,8 @@
 
 A simulated Blackjack experience via the Python console. I created this because I had not seen any examples online of a program that accurately simulates blackjack as it is played in a real casino. 
 <br><br/>
+![image](https://github.com/user-attachments/assets/727aee4c-7712-4ef5-92b3-a5e38aa2ba83)
+<br><br/>
 
 This means generating a randomly shuffled shoe and progressing through it until a limit is reached for the shoe to be shuffled. This allows for what is referred to as "Card Counting" or "Advantage Play". Included in the program is the card counting calculation (Both the "Running" and "True" counts). 
 <br><br/>
