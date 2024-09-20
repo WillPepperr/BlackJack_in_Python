@@ -4,9 +4,14 @@ import random
 class Card:
     suits = ['h', 'd', 'c', 's']
     values = {
-        '2': 2, '3': 3, '4': 4, '5': 5,
+        '2': 2, 
+        '3': 3, 
+        '4': 4, 
+        '5': 5,
         '6': 6,
-        '7': 7, '8': 8, '9': 9,
+        '7': 7,
+        '8': 8,
+        '9': 9,
         '10': 10, 'J': 10, 'Q': 10, 'K': 10,
         'A': 11
     }
@@ -71,7 +76,7 @@ class Shoe:
         self.burned_cards.append(hidden_card)
 
 class Hand:
-    def __init__(self, is_player_hand=True, hand_number=0):
+    def __init__(self, is_player_hand=True, hand_number=0, player_bet=0, player_balance=0):
         self.cards = []
         self.is_player_hand = is_player_hand
         self.can_split = False
@@ -79,6 +84,8 @@ class Hand:
         self.num_aces = sum(1 for card in self.cards if card.face == 'A')
         self.has_doubled = False
         self.has_split = False
+        self.player_bet = player_bet
+        self.player_balance = player_balance
 
     def add_card(self, card):
         self.cards.append(card)
@@ -101,13 +108,13 @@ class Hand:
         return False
 
     def update_split_ability(self):
-        if len(self.cards) == 2 and self.cards[0].value == self.cards[1].value:
+        if len(self.cards) == 2 and (self.cards[0].value == self.cards[1].value and self.player_bet <= self.player_balance):
             self.can_split = True
         else:
             self.can_split = False
 
     def can_double(self):
-        return len(self.cards) == 2
+        return len(self.cards) == 2 and self.player_bet <= self.player_balance
 
     def hand_split(self):
         if not self.can_split:
@@ -155,7 +162,7 @@ class BlackjackGame:
         self.game_loop()
 
     def deal_initial_cards(self):
-        self.player_hands = [Hand(is_player_hand=True)]
+        self.player_hands = [Hand(is_player_hand=True, player_bet=self.bet_amount, player_balance=self.player.balance)]
         self.dealer_hand = Hand(is_player_hand=False)
         for hand in self.player_hands:
             hand.add_card(self.shoe.deal())
